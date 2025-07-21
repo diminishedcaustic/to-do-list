@@ -5,7 +5,8 @@ const inputTextField = document.querySelector("#input-text-field")
 addButton.addEventListener('click', () => {
     if(inputTextField.value != ''){
         let newItem = document.createElement("li");
-        newItem.textContent = inputTextField.value;
+        let newP = document.createElement("p");
+        newP.textContent = inputTextField.value;
         
         let newButton = document.createElement("button");
         newButton.textContent = 'x';
@@ -16,6 +17,7 @@ addButton.addEventListener('click', () => {
             parent.parentElement.removeChild(parent);
         })
 
+        newItem.append(newP);
         newItem.append(newButton);
         
         toDoList.append(newItem);

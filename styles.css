@@ -28,7 +28,7 @@ input {
     padding: 5px;
 }
 
-button {
+button:not(.remove-button) {
     border-radius: 10px;
     padding: 5px;
 }
@@ -42,20 +42,24 @@ button {
 
 .bottom {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+
 }
 
 ul {
     list-style: none;
+    flex: 1;
 }
 
 li {
     display: flex;
     align-items: center;
-    padding: 10px;
+        justify-content: space-between;
+        padding: 10px;
     margin-left: 10px;
 }
 
 .remove-button {
-    align-self: flex-end;
+    border-radius: 100%;
+    padding: 5px;
 }
