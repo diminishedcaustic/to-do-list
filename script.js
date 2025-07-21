@@ -2,7 +2,15 @@ const toDoList = document.querySelector("#to-do-list");
 const addButton = document.querySelector("#add");
 const inputTextField = document.querySelector("#input-text-field")
 
-addButton.addEventListener('click', () => {
+addButton.addEventListener('click', addItem);
+
+document.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter'){
+        addItem();
+    }
+});
+
+function addItem() {
     if(inputTextField.value != ''){
         let newItem = document.createElement("li");
         let newP = document.createElement("p");
@@ -23,4 +31,4 @@ addButton.addEventListener('click', () => {
         toDoList.append(newItem);
         inputTextField.value = '';
     }
-});
+}
