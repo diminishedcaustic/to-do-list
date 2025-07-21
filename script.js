@@ -15,6 +15,7 @@ function addItem() {
         let newItem = document.createElement("li");
         let newP = document.createElement("p");
         newP.textContent = inputTextField.value;
+        newP.style.textDecoration = 'none';
         
         let newButton = document.createElement("button");
         newButton.textContent = 'x';
@@ -23,6 +24,17 @@ function addItem() {
         newButton.addEventListener('click', () => {
             let parent = newButton.parentElement
             parent.parentElement.removeChild(parent);
+        })
+
+        newItem.addEventListener('click', () => {
+            if(newP.style.textDecoration == 'none'){
+                newP.style.textDecoration = 'line-through';
+                newP.style.color = 'grey';
+            }
+            else{
+                newP.style.textDecoration = 'none';
+                newP.style.color = 'black';
+            }
         })
 
         newItem.append(newP);

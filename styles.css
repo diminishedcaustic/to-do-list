@@ -54,9 +54,13 @@ ul {
 li {
     display: flex;
     align-items: center;
-        justify-content: space-between;
-        padding: 10px;
+    justify-content: space-between;
+    padding: 10px;
     margin-left: 10px;
+}
+
+li:hover {
+    cursor: pointer;
 }
 
 .remove-button {
