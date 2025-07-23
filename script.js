@@ -17,14 +17,14 @@ function addItem() {
         newP.textContent = inputTextField.value;
         newP.style.textDecoration = 'none';
         
-        let newButton = document.createElement("button");
+        let newButton = document.createElement("p");
         newButton.textContent = 'x';
         newButton.classList.add("remove-button");
 
         newButton.addEventListener('click', () => {
             let parent = newButton.parentElement
             parent.parentElement.removeChild(parent);
-        })
+        });
 
         newItem.addEventListener('click', () => {
             if(newP.style.textDecoration == 'none'){
@@ -33,9 +33,9 @@ function addItem() {
             }
             else{
                 newP.style.textDecoration = 'none';
-                newP.style.color = 'black';
+                newP.style.color = 'white';
             }
-        })
+        });
 
         newItem.append(newP);
         newItem.append(newButton);
